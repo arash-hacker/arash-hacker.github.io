@@ -295,10 +295,9 @@
             var POINT_CLOUD ;
             var POINTS;
             var GROUP;
-            var SPRITE_TEXT;
             var savedOptions = {
-                cameraSize: 0,
-                pointSize: 0,
+                cameraSize: 0.001,
+                pointSize: 0.01,
                 showThumbnail: false,
                 showImagePlane: true,
                 drawLineOnPointClick:false,
@@ -307,7 +306,7 @@
             };
 
             var options = {
-                cameraSize: 0.001,
+                cameraSize: 0.1,
                 pointSize: 0.01,
                 imagePlaneSize: 50,
                 showThumbnail: true,
@@ -453,83 +452,12 @@
                             if(dis>_80PDiffMX){
                                 POINTS.colors[j].setRGB(1.0, 0.0, 0.0)
                             }else if(dis<_30PDiffMN){
-
-                                document.title=(maxDis-minDis).toFixed(3).toString();
                                 POINTS.colors[j].setRGB(0.0, 1.0, 0.0)
                             }
                         }
 
             }
-
-function roundRect(ctx, x, y, w, h, r) 
-{
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-	ctx.stroke();   
-}
-function makeTextSprite( message, parameters )
-{
-	if ( parameters === undefined ) parameters = {};
-	
-	var fontface = parameters.hasOwnProperty("fontface") ? 
-		parameters["fontface"] : "Arial";
-	
-	var fontsize = parameters.hasOwnProperty("fontsize") ? 
-		parameters["fontsize"] : 18;
-	
-	var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
-		parameters["borderThickness"] : 4;
-	
-	var borderColor = parameters.hasOwnProperty("borderColor") ?
-		parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
-	
-	var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-		parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
-	//var spriteAlignment = THREE.SpriteAlignment.topLeft;
-		
-	var canvas = document.createElement('canvas');
-	var context = canvas.getContext('2d');
-	context.font = "Bold " + fontsize + "px " + fontface;
-    
-	// get size data (height depends only on font size)
-	var metrics = context.measureText( message );
-	var textWidth = metrics.width;
-	
-	// background color
-	context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
-								  + backgroundColor.b + "," + backgroundColor.a + ")";
-	// border color
-	context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
-								  + borderColor.b + "," + borderColor.a + ")";
-	context.lineWidth = borderThickness;
-	roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
-	// 1.4 is extra height factor for text below baseline: g,j,p,q.
-	
-	// text color
-	context.fillStyle = "rgba(0, 0, 0, 1.0)";
-	context.fillText( message, borderThickness, fontsize + borderThickness);
-	
-	// canvas contents will be used for a texture
-	var texture = new THREE.Texture(canvas) 
-	texture.needsUpdate = true;
-	var spriteMaterial = new THREE.SpriteMaterial( 
-		{ map: texture} );
-	var sprite = new THREE.Sprite( spriteMaterial );
-	sprite.scale.set(100,50,1.0);
-	return sprite;	
-}
-
-function addDatGui(){
+            function addDatGui(){
                 var gui = new dat.GUI();
                 f1 = gui.addFolder('Options');
 
@@ -962,7 +890,6 @@ function addDatGui(){
                 }
                 $('#loading').hide();
                 init();
-                
                 animate();
 
                 invokeJourneyWrapper(function () { journeyWrapper.initialize(); });
@@ -1549,26 +1476,14 @@ function addDatGui(){
                     let avgZ=(intersected[0].point.z+selectedCamera.geometry.boundingSphere.center.z)/2;
 
                     mesh=create2DText(Math.sqrt(midX**2+midY**2+midZ**2).toFixed(2)+"");
-                    console.info(intersected[0].point,selectedCamera.geometry.boundingSphere.center,
-                        avgX,avgY,avgZ);
-                    console.log("Dis::",Math.sqrt(midX**2+midY**2+midZ**2).toFixed(2));
-
                     
                      mesh.position.set(
                         avgX+2,
                         avgY,
                         avgZ,
                     ); 
-                    
-                    //mesh.rotation.x = -0.9;
-                    //line.add(mesh);
-                 
-
                     virtualLinesByClick.add(line);
-                   // scene_group.add(mesh);
                     scene_group.add(virtualLinesByClick);
-
-
                 }
 
                 if (hoverCamera !== undefined && !options.drawLineOnPointClick) {
