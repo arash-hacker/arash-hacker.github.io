@@ -4,6 +4,8 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="../favicon.gif" type="image/gif" >
+
 </head>
 <title>Arshiamidos Blog</title>
 <body>
@@ -17,18 +19,26 @@
     var converter = new showdown.Converter();
     var root=document.getElementById("root");
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://raw.githubusercontent.com/Arshiamidos/Blog/master/README.md');
+    var urlParams = new URLSearchParams(window.location.search);
+    xhr.open('GET', urlParams.has('id')?urlParams.get('id'):'https://raw.githubusercontent.com/Arshiamidos/Blog/master/README.md');
     xhr.onload = function() {
         if (xhr.status != 200) { 
            xhr.onerror();
         } else { 
+            console.log(xhr.response)
             root.innerHTML=converter.makeHtml(xhr.response); 
+            var links = document.links;
+
+            for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+                    links[i].target = '_self';
+            }
         }
     };
     xhr.onerror = function() {
         alert("Request failed");
     };
     xhr.send();
+    
 
 </script>
 </html>
