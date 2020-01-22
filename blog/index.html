@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<title>Arshiamidos Blog</title>
+<body>
+    <div id="root"></div>
+</body>
+
+<script  src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+<script>
+
+
+    var converter = new showdown.Converter();
+    var root=document.getElementById("root");
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://raw.githubusercontent.com/Arshiamidos/arshiamidos.github.io/master/README.md');
+    xhr.onload = function() {
+        if (xhr.status != 200) { 
+           xhr.onerror();
+        } else { 
+            root.innerHTML=converter.makeHtml(xhr.response); 
+        }
+    };
+    xhr.onerror = function() {
+        alert("Request failed");
+    };
+    xhr.send();
+
+</script>
+</html>
