@@ -8,8 +8,10 @@
 
 </head>
 <title>Arshiamidos Blog</title>
-<body>
-    <div id="root"></div>
+<body style="background-image: url('../LinkedIn4_files/images/2.gif');display:flex;justify-content:center;align-items:center">
+    <div style="display:flex;width:70%;justify-content:center;align-items:center;background:white">
+        <div id="root"></div>
+    </div>
 </body>
 
 <script  src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
@@ -20,7 +22,6 @@
     var root=document.getElementById("root");
     let xhr = new XMLHttpRequest();
     var urlParams = new URLSearchParams(window.location.search);
-    console.log("--> ",urlParams.get('id'))
     xhr.open('GET', urlParams.has('id')?urlParams.get('id'):'https://raw.githubusercontent.com/Arshiamidos/Blog/master/README.md');
     xhr.onload = function() {
         if (xhr.status != 200) { 
