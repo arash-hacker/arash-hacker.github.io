@@ -8,32 +8,42 @@
 
 </head>
 <title>Arshiamidos Blog</title>
-<body style="background-image: url('../LinkedIn4_files/images/2.gif');display:flex;justify-content:center;align-items:center">
-    <div style="display:flex;width:70%;justify-content:center;align-items:center;background:white">
-        <div id="root"></div>
+<body style="background-image: url('../assets/images/2.gif');display:flex;justify-content:center;align-items:center">
+    <div style="display:flex;width:80%;justify-content:center;align-items:center;background:white">
+        <div id="root" style="padding:20px;display: flex;flex-direction: column;justify-content: center;"></div>
     </div>
 </body>
 
 <script  src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
 <script>
-
+    let base="https://raw.githubusercontent.com/Arshiamidos/Blog/master/"
 
     var converter = new showdown.Converter();
     var root=document.getElementById("root");
     let xhr = new XMLHttpRequest();
     var urlParams = new URLSearchParams(window.location.search);
-    xhr.open('GET', urlParams.has('id')?urlParams.get('id'):'https://raw.githubusercontent.com/Arshiamidos/Blog/master/README.md');
+    xhr.open('GET', base=urlParams.has('id')?urlParams.get('id'):base+'README.md');
+
+    console.log(">>",base);
     xhr.onload = function() {
         if (xhr.status != 200) { 
            xhr.onerror();
         } else { 
-            console.log(xhr.response)
+            //console.log(xhr.response)
             root.innerHTML=converter.makeHtml(xhr.response); 
             var links = document.links;
-
+            
             for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+                    //convert link open in itself
                     links[i].target = '_self';
             }
+            imgs=document.getElementsByTagName("img");
+            console.log(imgs.length)
+            for (var i = 0; i < imgs.length; i++) {
+                   imgs[i].setAttribute("src",base.replace('README.md','')+imgs[i].getAttribute("src"))
+                   console.log("!> ",imgs[i])
+            }
+
         }
     };
     xhr.onerror = function() {
