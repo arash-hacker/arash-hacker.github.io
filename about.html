@@ -77,12 +77,14 @@
                           </div>
                       
                           <h2 class="pv-top-card-section__headline Sans-19px-black-85%">
-                            <span style="color:rgb(243, 26, 11)">Software Engineer<span>
-                            <span style="color:rgb(236, 204, 18)">Problem Solver, <span>
-                            <span style="color:chartreuse">Hacker, </span>
-                            <span style="color:rgb(0, 26, 255)">Inventor, </span>
-                            <span style="color:rgb(240, 6, 228)">(E/I)NTP<span>
-                            <span style="color:rgb(0, 0, 0)"><span>
+                            <span style="color:rgb(255, 0, 0)">Software Engineer, <span>
+                            <span style="color:rgb(255, 128, 51)">Artist, <span>
+                            <span style="color:rgb(255, 255, 0)">Craftsman, <span>
+                            <span style="color:rgb(128, 255, 0)">Scientist, <span>
+                            <span style="color:rgb(0, 255, 255)"Polyglot, <span>
+                            <span style="color:rgb(0, 0, 255)">Hacker, </span>
+                            <span style="color:rgb(127, 0, 255)">Inventor, </span>
+                            <span style="color:rgb(255, 0, 255)">(E/I)NTP<span>
                           </h2>
                         </div>
 
@@ -90,7 +92,7 @@
                         <div id="ember4532" class="pv-top-card-section__summary pv-top-card-section__summary--with-content mt4 ember-view">
                           <div id="ember4534" class="pv-top-card-section__summary-text text-align-left mt4 ember-view">
                             <b>The quieter you become, the more you can hear</b> </br></br>
-                            Software engineer with +11 years of experience.</br>
+                            Software engineer with +<p id="years">.</p> years of experience.</br>
                             a <b>Hacker</b> and <b>OSS</b> enthusiastic who has , curiosity and hands-on experience with <b>Kernel, System framework, OS internals, Open source, Full stack, Engineering, Mobile, Architect, Blockchain, Game, Web , Security, Algorithm, Crypto , Network, Math, BI, AI, ML.</b></br>
                             More than <b>50</b> projects have been published and more than <b>10</b> projects I was the technical lead.</br></br>
                             Expert in <b>NodeJS</b>, <b>Python</b>(Pythonista), <b>Golang</b>(Gopher), <b>Rust</b>(Rustacean), </br>
@@ -127,7 +129,7 @@
     gtag('js', new Date());
     gtag('config', 'UA-130885931-1');
   </script>
-
+ <script>document.getElementById("years").innerHTML =""+Math.ceil(Math.abs(new Date() - new Date('01/01/2010'))/ (1000 * 60 * 60 * 24)/365); </script>
 
   </body>
 
