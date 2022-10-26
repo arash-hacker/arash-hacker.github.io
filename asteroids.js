@@ -1,3 +1,4 @@
+// 
 (function() {
 function Asteroids() {
 	if ( ! window.ASTEROIDS )
@@ -5,8 +6,6 @@ function Asteroids() {
 			enemiesKilled: 0,
 			startedPlaying: (new Date()).getTime()
 		};
-	
-	var BASEPATH = 'http://arash-hacker.github.io/';
 	
 	/*
 		Classes
@@ -263,10 +262,7 @@ function Asteroids() {
 				this.container.parentNode.removeChild(this.container);
 		},
 		
-		sendScore: function() {
-		  var timePlayed = (new Date()).getTime() - window.ASTEROIDS.startedPlaying;
-			this.iframe.src = highscoreURL + "?asd=" + (window.ASTEROIDS.enemiesKilled * 10).toString() + "&sad=" + escape(document.location.href) + '&das=' + timePlayed;
-		}
+
 	};
 	
 	/*
@@ -310,7 +306,6 @@ function Asteroids() {
 	var maxParticles = isIE ? 20 : 40;
 	var maxBullets = isIE ? 10 : 20;
 	
-	var highscoreURL = BASEPATH + "highscores/";
 	
 	// generated every 10 ms
 	this.flame = {r: [], y: []};
