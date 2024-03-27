@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b277643.chunk.css",
-    "main.js": "/static/js/main.d88f6a38.chunk.js",
-    "main.js.map": "/static/js/main.d88f6a38.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.43d88c18.js",
-    "runtime-main.js.map": "/static/js/runtime-main.43d88c18.js.map",
-    "static/css/2.53a60f20.chunk.css": "/static/css/2.53a60f20.chunk.css",
-    "static/js/2.af73dbb9.chunk.js": "/static/js/2.af73dbb9.chunk.js",
-    "static/js/2.af73dbb9.chunk.js.map": "/static/js/2.af73dbb9.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.7a5933c41de40cf93c5d256cc45e432f.js": "/precache-manifest.7a5933c41de40cf93c5d256cc45e432f.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.53a60f20.chunk.css.map": "/static/css/2.53a60f20.chunk.css.map",
-    "static/css/main.5b277643.chunk.css.map": "/static/css/main.5b277643.chunk.css.map",
-    "static/js/2.af73dbb9.chunk.js.LICENSE.txt": "/static/js/2.af73dbb9.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff"
+    "main.css": "https://arash-hacker.github.io/githunt/static/css/main.5b277643.chunk.css",
+    "main.js": "https://arash-hacker.github.io/githunt/static/js/main.db426d9a.chunk.js",
+    "main.js.map": "https://arash-hacker.github.io/githunt/static/js/main.db426d9a.chunk.js.map",
+    "runtime-main.js": "https://arash-hacker.github.io/githunt/static/js/runtime-main.e0204b77.js",
+    "runtime-main.js.map": "https://arash-hacker.github.io/githunt/static/js/runtime-main.e0204b77.js.map",
+    "static/css/2.30632df3.chunk.css": "https://arash-hacker.github.io/githunt/static/css/2.30632df3.chunk.css",
+    "static/js/2.772c5229.chunk.js": "https://arash-hacker.github.io/githunt/static/js/2.772c5229.chunk.js",
+    "static/js/2.772c5229.chunk.js.map": "https://arash-hacker.github.io/githunt/static/js/2.772c5229.chunk.js.map",
+    "index.html": "https://arash-hacker.github.io/githunt/index.html",
+    "precache-manifest.781852837aede0e502bf7ad1b94b8b7f.js": "https://arash-hacker.github.io/githunt/precache-manifest.781852837aede0e502bf7ad1b94b8b7f.js",
+    "service-worker.js": "https://arash-hacker.github.io/githunt/service-worker.js",
+    "static/css/2.30632df3.chunk.css.map": "https://arash-hacker.github.io/githunt/static/css/2.30632df3.chunk.css.map",
+    "static/css/main.5b277643.chunk.css.map": "https://arash-hacker.github.io/githunt/static/css/main.5b277643.chunk.css.map",
+    "static/js/2.772c5229.chunk.js.LICENSE.txt": "https://arash-hacker.github.io/githunt/static/js/2.772c5229.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "https://arash-hacker.github.io/githunt/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.43d88c18.js",
-    "static/css/2.53a60f20.chunk.css",
-    "static/js/2.af73dbb9.chunk.js",
+    "static/js/runtime-main.e0204b77.js",
+    "static/css/2.30632df3.chunk.css",
+    "static/js/2.772c5229.chunk.js",
     "static/css/main.5b277643.chunk.css",
-    "static/js/main.d88f6a38.chunk.js"
+    "static/js/main.db426d9a.chunk.js"
   ]
 }
