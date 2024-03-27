@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4dc25038801ab3c125fdc20f124017c0",
+    "revision": "4dc60496735ee5c26f504c2fc0650a00",
     "url": "https://arash-hacker.github.io/githunt/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://arash-hacker.github.io/githunt/static/css/2.30632df3.chunk.css"
   },
   {
-    "revision": "5d001b755a38ab476d1a",
+    "revision": "f733af0ff495b78484f2",
     "url": "https://arash-hacker.github.io/githunt/static/css/main.5b277643.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://arash-hacker.github.io/githunt/static/js/2.772c5229.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5d001b755a38ab476d1a",
-    "url": "https://arash-hacker.github.io/githunt/static/js/main.db426d9a.chunk.js"
+    "revision": "f733af0ff495b78484f2",
+    "url": "https://arash-hacker.github.io/githunt/static/js/main.e73e79b2.chunk.js"
   },
   {
     "revision": "32f943924ed654521b11",
