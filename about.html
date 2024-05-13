@@ -59,6 +59,9 @@
                                <img src="assets/images/arash5.jpg" id="profile5"
                                 style="display:none ;transform: rotateY(90deg)"
                                 class="profile-photo-edit__preview rotator" alt="arash-hacker" width="200" height="200">
+                              <img src="assets/images/arash6.jpg" id="profile5"
+                                style="display:none ;transform: rotateY(90deg)"
+                                class="profile-photo-edit__preview rotator" alt="arash-hacker" width="200" height="200">
                             </button>
                           </div>
                         </div>
@@ -171,8 +174,9 @@
       document.getElementById("profile" + 3).style.display = "none"
       document.getElementById("profile" + 4).style.display = "none"
       document.getElementById("profile" + 5).style.display = "none"
+      document.getElementById("profile" + 6).style.display = "none"
       document.getElementById("profile" + (profile)).style.display = "block"
-      profile = ((profile) % 5) + 1
+      profile = ((profile) % 6) + 1
     }, 4000);
   </script>
 <script type="text/javascript" src="./asteroids.js"></script>
